@@ -23,9 +23,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Autofac;
-using Invisionware.IoC;
 
-namespace Invisionware.Ioc.Autofac
+namespace Invisionware.IoC.Autofac
 {
     /// <summary>
     /// The Autofac resolver.

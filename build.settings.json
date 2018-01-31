@@ -1,7 +1,7 @@
 {
 	"version": {
 		"VersionFile": "./build.version.json",
-		"AssemblyInfoFile": "./src/AssemblyInfo.Shared.cs",
+		"AssemblyInfoFile": null,
 		"LoadFrom": "versionfile",
 		"AutoIncrementVersion": false
 	},
@@ -9,7 +9,7 @@
 		"SourcePath": "./src",
 		"SolutionFileSpec": "./*.sln",
 		"BuildOutPutPath": "", 
-		"ArtifactsPath": "./artifacts/app",
+		"ArtifactsPath": "./artifacts/artifacts",
 		"TreatWarningsAsErrors": false
 	},
 	"xamarin": {
@@ -26,14 +26,14 @@
 	},
 	"nuget": {
 		"NuGetConfig": "",
-		"FeedUrl": "",
-		"FeedAPIKey": "",
+		"FeedUrl": "https://www.nuget.org",
+		"FeedAPIKey": "NUGETAPIKEY",
 		"ArtifactsPath": "./artifacts/packages",
 		"NuspecPath": "./nuspec",
 		"UpdateVersion": true,
-		"UpdateLibraryDependencies": false,
+		"UpdateLibraryDependencies": true,
 		"VersionDependencyForLibrary": "greaterthanorequal",
-		"LibraryNamespaceBase": "",
+		"LibraryNamespaceBase": "Invisionware.IoC",
 		"LibraryMinVersionDependency": ""
 	}
 }

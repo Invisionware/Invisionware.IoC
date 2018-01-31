@@ -41,9 +41,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Invisionware.Ioc.Autofac\Invisionware.Ioc.Autofac.csproj">
+    <ProjectReference Include="..\..\src\Invisionware.Ioc.Autofac\Invisionware.IoC.Autofac.csproj">
       <Project>{e240321b-3738-41ea-b801-536f7a7b4f6e}</Project>
-      <Name>Invisionware.Ioc.Autofac</Name>
+      <Name>Invisionware.IoC.Autofac</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Invisionware.IoC.Core\Invisionware.IoC.Core.csproj">
       <Project>{9ab2e599-f30e-4a6c-823c-003f1c89f40f}</Project>

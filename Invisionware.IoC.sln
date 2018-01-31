@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{565909BF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.IoC.Core", "src\Invisionware.IoC.Core\Invisionware.IoC.Core.csproj", "{9AB2E599-F30E-4A6C-823C-003F1C89F40F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Ioc.Autofac", "src\Invisionware.Ioc.Autofac\Invisionware.Ioc.Autofac.csproj", "{E240321B-3738-41EA-B801-536F7A7B4F6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.IoC.Autofac", "src\Invisionware.Ioc.Autofac\Invisionware.IoC.Autofac.csproj", "{E240321B-3738-41EA-B801-536F7A7B4F6E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.IoC.Ninject", "src\Invisionware.IoC.Ninject\Invisionware.IoC.Ninject.csproj", "{2F522437-A5EC-4CF4-B5F9-0DFA43DAFE27}"
 EndProject

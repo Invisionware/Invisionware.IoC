@@ -1,17 +1,10 @@
+using Autofac;
 using Invisionware.IoC;
-
-#if WINDOWS_PHONE
-using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
-using TestFixture = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestClassAttribute;
-using Test = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestMethodAttribute;
-#else
+using Invisionware.IoC.Autofac;
 using NUnit.Framework;
-#endif
 
 namespace IocTests
 {
-    using Autofac;
-    using Invisionware.Ioc.Autofac;
 
     [TestFixture()]
     public class AutofacResolveTests : ResolveTests

@@ -21,9 +21,8 @@
 
 using System;
 using Autofac;
-using Invisionware.IoC;
 
-namespace Invisionware.Ioc.Autofac
+namespace Invisionware.IoC.Autofac
 {
     /// <summary>
     /// The AutoFac container wrapper

@@ -270,8 +270,8 @@ tools/VSS.NuGet.AuthHelper.exe
 tools/packages.config.md5sum
 
 # GIT
-git.password
-nugetapi.key											  
+/git.password
+/nugetapi.key
 
 # Python Tools for Visual Studio (PTVS)
 __pycache__/

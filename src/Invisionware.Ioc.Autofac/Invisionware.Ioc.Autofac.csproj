@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.1</TargetFramework>
+    <RootNamespace>Invisionware.IoC.Autofac</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

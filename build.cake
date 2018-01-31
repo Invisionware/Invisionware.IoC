@@ -281,16 +281,22 @@ Task("Nuget-Publish")
 	{
 		try
 		{		
-			NuGetPush(n, new NuGetPushSettings {
+			var ngps = new NuGetPushSettings {
 				Source = settings.NuGet.FeedUrl,
 				ApiKey = settings.NuGet.FeedApiKey,
-				ConfigFile = settings.NuGet.NuGetConfig,
 				Verbosity = NuGetVerbosity.Normal
-			});
+			};
+			
+			if (!string.IsNullOrEmpty(settings.NuGet.NuGetConfig) && FileExists(settings.NuGet.NuGetConfig))
+			{
+				ngps.ConfigFile = settings.NuGet.NuGetConfig;
+			}
+			
+			NuGetPush(n, ngps);
 		}
 		catch (Exception ex)
 		{
-			Information("\tFailed to published: ", ex.Message);
+			Information("\tFailed to published: ", ex.ToString());
 			
 			if (ex.Message.Contains("403")) { authError = true; }
 		}
