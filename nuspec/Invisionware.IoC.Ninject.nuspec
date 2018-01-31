@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+	<metadata>
+		<id>Invisionware.IoC.Ninject</id>
+		<version>1.0.0-pre01</version>
+		<title>Invisionware - IoC - Ninject</title>
+		<authors>Invisionware</authors>
+		<owners>Invisionware</owners>
+		<projectUrl>https://github.com/Invisionware/IoC</projectUrl>
+		<licenseUrl>https://raw.githubusercontent.com/Invisionware/IoC/master/LICENSE</licenseUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>This package implements the IOC provider contracts via Ninject</description>
+		<summary>Invisionware is a open source project that aims to provide a powerfull and cross platform set of tools and extension libraries.</summary>
+		<releaseNotes>Ported from XLabs Project and updated to .NET Standard Framewokr</releaseNotes>
+		<copyright>Copyright © 2018 Invisionware</copyright>
+		<tags>Invisionware IOC Ninject</tags>
+		<dependencies>
+			<group targetFramework="netstandard2.0">
+				<dependency id="Invisionware.IoC" version="1.0.0-pre01" />
+				<dependency id="Ninject" version="3.3.4" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<!-- Content Files -->
+		<!-- Assemblies: .NET Stanadard 2.0 -->
+		<file src="..\src\Invisionware.IOC.Ninject\bin\$configuration$\netstandard2.0\Invisionware.IOC.Ninject.dll" target="lib\netstandard2.0" />
+		<file src="..\src\Invisionware.IOC.Ninject\bin\$configuration$\netstandard2.0\Invisionware.IOC.Ninject.pdb" target="lib\netstandard2.0" />
+	</files>
+</package>

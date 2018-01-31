@@ -1,0 +1,39 @@
+{
+	"version": {
+		"VersionFile": "./build.version.json",
+		"AssemblyInfoFile": "./src/AssemblyInfo.Shared.cs",
+		"LoadFrom": "versionfile",
+		"AutoIncrementVersion": false
+	},
+	"build": {
+		"SourcePath": "./src",
+		"SolutionFileSpec": "./*.sln",
+		"BuildOutPutPath": "", 
+		"ArtifactsPath": "./artifacts/app",
+		"TreatWarningsAsErrors": false
+	},
+	"xamarin": {
+		"EnableXamarinIOS": false,
+		"MacAgentIPAddress": "",
+		"MacAgentUserName": "",
+		"MacAgentUserPassword": ""
+	},
+	"test": {
+		"SourcePath": "./tests",
+		"ResultsPath": "./artifacts",
+		"AssemblyFileSpec": "*.UnitTests.dll",
+		"Framework": "NUnit3"
+	},
+	"nuget": {
+		"NuGetConfig": "",
+		"FeedUrl": "",
+		"FeedAPIKey": "",
+		"ArtifactsPath": "./artifacts/packages",
+		"NuspecPath": "./nuspec",
+		"UpdateVersion": true,
+		"UpdateLibraryDependencies": false,
+		"VersionDependencyForLibrary": "greaterthanorequal",
+		"LibraryNamespaceBase": "",
+		"LibraryMinVersionDependency": ""
+	}
+}

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+	<metadata>
+		<id>Invisionware.IoC</id>
+		<version>1.0.0-pre01</version>
+		<title>Invisionware - IoC</title>
+		<authors>Invisionware</authors>
+		<owners>Invisionware</owners>
+		<projectUrl>https://github.com/Invisionware/IoC</projectUrl>
+		<licenseUrl>https://raw.githubusercontent.com/Invisionware/IoC/master/LICENSE</licenseUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>This package implements the core IOC provider contracts</description>
+		<summary>Invisionware is a open source project that aims to provide a powerfull and cross platform set of tools and extension libraries.</summary>
+		<releaseNotes>Ported from XLabs Project and updated to .NET Standard Framewokr</releaseNotes>
+		<copyright>Copyright © 2018 Invisionware</copyright>
+		<tags>Invisionware IOC</tags>
+		<dependencies>
+			<group targetFramework="NETStandard1.0"/>
+		</dependencies>
+	</metadata>
+	<files>
+		<!-- Content Files -->
+		<!-- file src="..\..\docs\Invisionware.IOC.Readme.md" target="content" -->
+
+		<!-- Assemblies: .NET Standard 1.0 -->
+		<file src="..\src\Invisionware.IOC.Core\bin\$configuration$\netstandard1.0\Invisionware.IOC.Core.dll" target="lib\netstandard1.0" />
+		<file src="..\src\Invisionware.IOC.Core\bin\$configuration$\netstandard1.0\Invisionware.IOC.Core.pdb" target="lib\netstandard1.0" />
+	</files>
+</package>
