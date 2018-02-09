@@ -2,12 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Invisionware.IoC.Ninject</id>
-		<version>1.0.0-pre02</version>
+		<version>1.0.0-pre03</version>
 		<title>Invisionware - IoC - Ninject</title>
 		<authors>Invisionware</authors>
 		<owners>Invisionware</owners>
 		<projectUrl>https://github.com/Invisionware/IoC</projectUrl>
 		<licenseUrl>https://raw.githubusercontent.com/Invisionware/IoC/master/LICENSE</licenseUrl>
+		<iconUrl>https://github.com/Invisionware/IoC/raw/master/logo.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>This package implements the IOC provider contracts via Ninject</description>
 		<summary>Invisionware is a open source project that aims to provide a powerfull and cross platform set of tools and extension libraries.</summary>
@@ -16,7 +17,7 @@
 		<tags>Invisionware IOC Ninject</tags>
 		<dependencies>
 			<group targetFramework="netstandard2.0">
-				<dependency id="Invisionware.IoC" version="1.0.0-pre01" />
+				<dependency id="Invisionware.IoC" version="1.0.0-pre03" />
 				<dependency id="Ninject" version="3.3.4" />
 			</group>
 		</dependencies>
