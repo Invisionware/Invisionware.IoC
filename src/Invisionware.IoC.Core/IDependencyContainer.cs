@@ -1,5 +1,5 @@
 ﻿// ***********************************************************************
-// Assembly         : XLabs.Ioc
+// Assembly         : Invisionware.Ioc
 // Author           : XLabs Team
 // Created          : 12-27-2015
 // 

@@ -1,5 +1,5 @@
 ﻿// ***********************************************************************
-// Assembly         : XLabs.Ioc.Ninject
+// Assembly         : Invisionware.Ioc.Ninject
 // Author           : XLabs Team
 // Created          : 12-27-2015
 // 

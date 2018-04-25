@@ -1,5 +1,5 @@
 ﻿// ***********************************************************************
-// Assembly         : XLabs.Ioc.Autofac
+// Assembly         : Invisionware.Ioc.Autofac
 // Author           : XLabs Team
 // Created          : 12-27-2015
 // 
@@ -62,7 +62,7 @@ namespace Invisionware.IoC.Autofac
         /// <param name="instance">Instance of type T.</param>
         /// <returns>An instance of <see cref="IDependencyContainer"/></returns>
         public IDependencyContainer Register<T>(T instance) where T : class
-        {
+        {			
             var builder = new ContainerBuilder();
             builder.Register<T>(t => instance).As<T>();
             builder.Update(this.container);

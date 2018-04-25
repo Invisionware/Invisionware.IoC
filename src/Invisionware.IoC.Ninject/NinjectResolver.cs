@@ -1,5 +1,5 @@
 ﻿// ***********************************************************************
-// Assembly         : XLabs.Ioc.Ninject
+// Assembly         : Invisionware.Ioc.Ninject
 // Author           : XLabs Team
 // Created          : 12-27-2015
 // 
@@ -22,7 +22,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Ninject;
+using Ninject.Parameters;
 
 namespace Invisionware.IoC.Ninject
 {
@@ -51,12 +53,15 @@ namespace Invisionware.IoC.Ninject
 		/// Resolve a dependency.
 		/// </summary>
 		/// <typeparam name="T">Type of instance to get.</typeparam>
+		/// <param name="constructorArgs">The constructor arguments.</param>
 		/// <returns>An instance of {T} if successful, otherwise null.</returns>
-		public T Resolve<T>() where T : class
+		public T Resolve<T>(dynamic constructorArgs = null) where T : class
 		{
 			try
 			{
-				return this.container.Get<T>();
+				var args = ((object)constructorArgs).ToParameters()?.ToArray();
+
+				return args != null ? this.container.Get<T>(args) : this.container.Get<T>();
 			}
 			catch (ActivationException ex)
 			{
@@ -68,18 +73,21 @@ namespace Invisionware.IoC.Ninject
 				return null;
 			}
 		}
-			
+
 
 		/// <summary>
 		/// Resolve a dependency by type.
 		/// </summary>
 		/// <param name="type">Type of object.</param>
-		/// <returns>An instance to type if found as <see cref="object"/>, otherwise null.</returns>
-		public object Resolve(Type type)
+		/// <param name="constructorArgs">The constructor arguments.</param>
+		/// <returns>An instance to type if found as <see cref="object" />, otherwise null.</returns>
+		public object Resolve(Type type, dynamic constructorArgs = null)
 		{
 			try
 			{
-				return this.container.Get(type);
+				var args = ((object) constructorArgs).ToParameters()?.ToArray();
+
+				return args != null ? this.container.Get(type, args) : this.container.Get(type);
 			}
 			catch (ActivationException ex)
 			{
@@ -96,20 +104,26 @@ namespace Invisionware.IoC.Ninject
 		/// Resolve a dependency.
 		/// </summary>
 		/// <typeparam name="T">Type of instance to get.</typeparam>
+		/// <param name="constructorArgs">The constructor arguments.</param>
 		/// <returns>All instances of {T} if successful, otherwise null.</returns>
-		public IEnumerable<T> ResolveAll<T>() where T : class
+		public IEnumerable<T> ResolveAll<T>(dynamic constructorArgs = null) where T : class
 		{
-			return this.container.GetAll<T>();
+			var args = ((object)constructorArgs).ToParameters()?.ToArray();
+
+			return args != null ? this.container.GetAll<T>(args) : this.container.GetAll<T>();
 		}
 
 		/// <summary>
 		/// Resolve a dependency by type.
 		/// </summary>
 		/// <param name="type">Type of object.</param>
-		/// <returns>All instances of type if found as <see cref="object"/>, otherwise null.</returns>
-		public IEnumerable<object> ResolveAll(Type type)
+		/// <param name="constructorArgs">The constructor arguments.</param>
+		/// <returns>All instances of type if found as <see cref="object" />, otherwise null.</returns>
+		public IEnumerable<object> ResolveAll(Type type, dynamic constructorArgs = null)
 		{
-			return this.container.GetAll(type);
+			var args = ((object)constructorArgs).ToParameters()?.ToArray();
+
+			return args != null ? this.container.GetAll(type, args) : this.container.GetAll(type);
 		}
 
 		/// <summary>
@@ -131,6 +145,26 @@ namespace Invisionware.IoC.Ninject
 		{
 			return this.Resolve<T>() != null;
 		}
+
+		/// <summary>
+		/// Gets a value indicating whether this instance supports constructor arguments.
+		/// </summary>
+		/// <value><c>true</c> if this instance is constructor arguments supported; otherwise, <c>false</c>.</value>
+		public bool IsConstructorArgsSupported => true;
+
 		#endregion
+	}
+
+	internal static class DynamicExtensions
+	{
+		public static IEnumerable<IParameter> ToParameters<T>(this T obj)
+		{
+			Type cArgsType = obj?.GetType();
+
+			var args = cArgsType?.GetProperties().Select(x =>
+				new ConstructorArgument(x.Name, x.GetValue(obj))).Cast<IParameter>();
+
+			return args;
+		}
 	}
 }

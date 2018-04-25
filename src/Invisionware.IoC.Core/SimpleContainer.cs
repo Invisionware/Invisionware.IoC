@@ -1,5 +1,5 @@
 ﻿// ***********************************************************************
-// Assembly         : XLabs.Ioc
+// Assembly         : Invisionware.Ioc
 // Author           : XLabs Team
 // Created          : 12-27-2015
 // 
@@ -227,38 +227,47 @@ namespace Invisionware.IoC
 			/// Resolve a dependency.
 			/// </summary>
 			/// <typeparam name="T">Type of instance to get.</typeparam>
+			/// <param name="constructorArgs">The constructor arguments.</param>
 			/// <returns>An instance of {T} if successful, otherwise null.</returns>
-			public T Resolve<T>() where T : class
+			public T Resolve<T>(dynamic constructorArgs = null) where T : class
 			{
-				return this.ResolveAll<T>().FirstOrDefault() as T;
+				IEnumerable<T> results = this.ResolveAll<T>(constructorArgs);
+				var result = results?.FirstOrDefault();
+
+				return result as T;
 			}
 
 			/// <summary>
 			/// Resolve a dependency by type.
 			/// </summary>
 			/// <param name="type">Type of object.</param>
+			/// <param name="constructorArgs">The constructor arguments.</param>
 			/// <returns>An instance to type if found as <see cref="object" />, otherwise null.</returns>
-			public object Resolve(Type type)
+			public object Resolve(Type type, dynamic constructorArgs = null)
 			{
-				return this.ResolveAll(type).FirstOrDefault();
+				return this.ResolveAll(type, constructorArgs).FirstOrDefault();
 			}
 
 			/// <summary>
 			/// Resolve a dependency.
 			/// </summary>
 			/// <typeparam name="T">Type of instance to get.</typeparam>
+			/// <param name="constructorArgs">The constructor arguments.</param>
 			/// <returns>All instances of {T} if successful, otherwise null.</returns>
-			public IEnumerable<T> ResolveAll<T>() where T : class
+			public IEnumerable<T> ResolveAll<T>(dynamic constructorArgs = null) where T : class
 			{
-				return this.resolveObjectDelegate(typeof(T)).Cast<T>();
+				var result = this.resolveObjectDelegate(typeof(T)).Cast<T>();
+
+				return result;
 			}
 
 			/// <summary>
 			/// Resolve a dependency by type.
 			/// </summary>
 			/// <param name="type">Type of object.</param>
+			/// <param name="constructorArgs">The constructor arguments.</param>
 			/// <returns>All instances of type if found as <see cref="object" />, otherwise null.</returns>
-			public IEnumerable<object> ResolveAll(Type type)
+			public IEnumerable<object> ResolveAll(Type type, dynamic constructorArgs = null)
 			{
 				return this.resolveObjectDelegate(type);
 			}
@@ -282,6 +291,13 @@ namespace Invisionware.IoC
 			{
 				return this.Resolve<T>() != null;
 			}
+
+			/// <summary>
+			/// Gets a value indicating whether this instance supports constructor arguments.
+			/// </summary>
+			/// <value><c>true</c> if this instance is constructor arguments supported; otherwise, <c>false</c>.</value>
+			public bool IsConstructorArgsSupported => false;
+
 			#endregion
 		}
 	}
