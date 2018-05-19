@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Invisionware.IoC.Autofac</id>
-		<version>1.0.0-pre04</version>
+		<version>1.0.1</version>
 		<title>Invisionware - IoC - Autofac</title>
 		<authors>Invisionware</authors>
 		<owners>Invisionware</owners>
@@ -16,7 +16,7 @@
 		<copyright>Copyright © 2018 Invisionware</copyright>
 		<tags>Invisionware IOC Autofac</tags>
 		<dependencies>
-			<dependency id="Invisionware.IoC" version="1.0.0-pre04" />
+			<dependency id="Invisionware.IoC" version="1.0.0" />
 			<dependency id="Autofac" version="4.6.2" />
 		</dependencies>
 	</metadata>
