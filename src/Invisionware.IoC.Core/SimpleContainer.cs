@@ -33,24 +33,24 @@ namespace Invisionware.IoC
 		/// <summary>
 		/// The _resolver
 		/// </summary>
-		private readonly IResolver resolver;
+		private readonly IResolver _resolver;
 		/// <summary>
 		/// The _services
 		/// </summary>
-		private readonly Dictionary<Type, List<object>> services;
+		private readonly Dictionary<Type, List<object>> _services;
 		/// <summary>
 		/// The _registered services
 		/// </summary>
-		private readonly Dictionary<Type, List<Func<IResolver, object>>> registeredServices;
+		private readonly Dictionary<Type, List<Func<IResolver, object>>> _registeredServices;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SimpleContainer" /> class.
 		/// </summary>
 		public SimpleContainer()
 		{
-			this.resolver = new Resolver(this.ResolveAll);
-			this.services = new Dictionary<Type, List<object>>();
-			this.registeredServices = new Dictionary<Type, List<Func<IResolver, object>>>();
+			_resolver = new Resolver(ResolveAll);
+			_services = new Dictionary<Type, List<object>>();
+			_registeredServices = new Dictionary<Type, List<Func<IResolver, object>>>();
 		}
 
 		#region IDependencyContainer Members
@@ -60,7 +60,7 @@ namespace Invisionware.IoC
 		/// <returns>An instance of <see cref="IResolver" /></returns>
 		public IResolver GetResolver()
 		{
-			return this.resolver;
+			return _resolver;
 		}
 
 		/// <summary>
@@ -72,12 +72,11 @@ namespace Invisionware.IoC
 		public IDependencyContainer Register<T>(T instance) where T : class
 		{
 			var type = typeof(T);
-			List<object> list;
 
-			if (!this.services.TryGetValue(type, out list))
+			if (!_services.TryGetValue(type, out var list))
 			{
 				list = new List<object>();
-				this.services.Add(type, list);
+				_services.Add(type, list);
 			}
 
 			list.Add(instance);
@@ -94,7 +93,7 @@ namespace Invisionware.IoC
 			where T : class
 			where TImpl : class, T
 		{
-			return this.Register<T>(t => Activator.CreateInstance<TImpl>() as T);
+			return Register(t => Activator.CreateInstance<TImpl>() as T);
 		}
 
 		/// <summary>
@@ -108,15 +107,14 @@ namespace Invisionware.IoC
 			where TImpl : class, T
 		{
 			var type = typeof(T);
-			List<object> list;
 
-			if (!this.services.TryGetValue(type, out list))
+			if (!_services.TryGetValue(type, out var list))
 			{
 				list = new List<object>();
-				this.services.Add(type, list);
+				_services.Add(type, list);
 			}
 
-			var instance = Activator.CreateInstance<TImpl>() as TImpl;
+			var instance = Activator.CreateInstance<TImpl>();
 
 			list.Add(instance);
 			return this;
@@ -130,7 +128,7 @@ namespace Invisionware.IoC
 		/// <returns>An instance of <see cref="SimpleContainer" /></returns>
 		public IDependencyContainer Register<T>(Type type) where T : class
 		{
-			return this.Register(typeof(T), type);
+			return Register(typeof(T), type);
 		}
 
 		/// <summary>
@@ -142,10 +140,10 @@ namespace Invisionware.IoC
 		public IDependencyContainer Register(Type type, Type impl)
 		{
 			List<Func<IResolver, object>> list;
-			if (!this.registeredServices.TryGetValue(type, out list))
+			if (!_registeredServices.TryGetValue(type, out list))
 			{
 				list = new List<Func<IResolver, object>>();
-				this.registeredServices.Add(type, list);
+				_registeredServices.Add(type, list);
 			}
 
 			list.Add(t => Activator.CreateInstance(impl));
@@ -163,10 +161,10 @@ namespace Invisionware.IoC
 		{
 			var type = typeof(T);
 			List<Func<IResolver, object>> list;
-			if (!this.registeredServices.TryGetValue(type, out list))
+			if (!_registeredServices.TryGetValue(type, out list))
 			{
 				list = new List<Func<IResolver, object>>();
-				this.registeredServices.Add(type, list);
+				_registeredServices.Add(type, list);
 			}
 
 			list.Add(func);
@@ -182,7 +180,7 @@ namespace Invisionware.IoC
 		private IEnumerable<object> ResolveAll(Type type)
 		{
 			List<object> list;
-			if (this.services.TryGetValue(type, out list))
+			if (_services.TryGetValue(type, out list))
 			{
 				foreach (var service in list)
 				{
@@ -191,11 +189,11 @@ namespace Invisionware.IoC
 			}
 
 			List<Func<IResolver, object>> getter;
-			if (this.registeredServices.TryGetValue(type, out getter))
+			if (_registeredServices.TryGetValue(type, out getter))
 			{
 				foreach (var serviceFunc in getter)
 				{
-					yield return serviceFunc(this.resolver);
+					yield return serviceFunc(_resolver);
 				}
 			}
 		}
@@ -210,7 +208,7 @@ namespace Invisionware.IoC
 			/// <summary>
 			/// The _resolve object delegate
 			/// </summary>
-			private readonly Func<Type, IEnumerable<object>> resolveObjectDelegate;
+			private readonly Func<Type, IEnumerable<object>> _resolveObjectDelegate;
 
 			/// <summary>
 			/// Initializes a new instance of the <see cref="Resolver"/> class.
@@ -218,7 +216,7 @@ namespace Invisionware.IoC
 			/// <param name="resolveObjectDelegate">The resolve object delegate.</param>
 			internal Resolver(Func<Type, IEnumerable<object>> resolveObjectDelegate)
 			{
-				this.resolveObjectDelegate = resolveObjectDelegate;
+				_resolveObjectDelegate = resolveObjectDelegate;
 			}
 
 			#region IResolver Members
@@ -234,7 +232,7 @@ namespace Invisionware.IoC
 				IEnumerable<T> results = this.ResolveAll<T>(constructorArgs);
 				var result = results?.FirstOrDefault();
 
-				return result as T;
+				return result;
 			}
 
 			/// <summary>
@@ -256,7 +254,7 @@ namespace Invisionware.IoC
 			/// <returns>All instances of {T} if successful, otherwise null.</returns>
 			public IEnumerable<T> ResolveAll<T>(dynamic constructorArgs = null) where T : class
 			{
-				var result = this.resolveObjectDelegate(typeof(T)).Cast<T>();
+				var result = _resolveObjectDelegate(typeof(T)).Cast<T>();
 
 				return result;
 			}
@@ -269,7 +267,7 @@ namespace Invisionware.IoC
 			/// <returns>All instances of type if found as <see cref="object" />, otherwise null.</returns>
 			public IEnumerable<object> ResolveAll(Type type, dynamic constructorArgs = null)
 			{
-				return this.resolveObjectDelegate(type);
+				return _resolveObjectDelegate(type);
 			}
 
 			/// <summary>
@@ -279,7 +277,7 @@ namespace Invisionware.IoC
 			/// <returns><c>true</c> if the specified type is registered; otherwise, <c>false</c>.</returns>
 			public bool IsRegistered(Type type)
 			{
-				return this.Resolve(type) != null;
+				return Resolve(type) != null;
 			}
 
 			/// <summary>
@@ -289,7 +287,7 @@ namespace Invisionware.IoC
 			/// <returns><c>true</c> if this instance is registered; otherwise, <c>false</c>.</returns>
 			public bool IsRegistered<T>() where T : class
 			{
-				return this.Resolve<T>() != null;
+				return Resolve<T>() != null;
 			}
 
 			/// <summary>

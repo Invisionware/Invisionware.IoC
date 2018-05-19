@@ -6,7 +6,7 @@
     <SharedGUID>1210b22e-9d08-482d-ae40-3e1e2be06d73</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>XLabs.IOC.Ninject.NUnit.Shared</Import_RootNamespace>
+    <Import_RootNamespace>Invisionware.IoC.Ninject.UnitTests.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)NinjectResolveTests.cs" />
