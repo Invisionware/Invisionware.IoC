@@ -7,6 +7,8 @@ namespace XLabs.IOC.NUnit.Shared.Services
 {
 	public class MyServiceWithConstructorParam : IMyService
 	{
+		public MyServiceWithConstructorParam() { }
+
 		public MyServiceWithConstructorParam(int age)
 		{
 			Age = age;

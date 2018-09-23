@@ -243,7 +243,10 @@ namespace Invisionware.IoC
 			/// <returns>An instance to type if found as <see cref="object" />, otherwise null.</returns>
 			public object Resolve(Type type, dynamic constructorArgs = null)
 			{
-				return this.ResolveAll(type, constructorArgs).FirstOrDefault();
+				IEnumerable<object> results = this.ResolveAll(type, constructorArgs);
+				var result = results?.FirstOrDefault();
+
+				return result;
 			}
 
 			/// <summary>

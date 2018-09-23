@@ -112,21 +112,21 @@ namespace IocTests
 
 		//}
 
-		[Test]
-		public void CanInjectCtorDependenciesAutomatically()
-		{
-			var container = this.GetEmptyContainer();
+		//[Test]
+		//public void CanInjectCtorDependenciesAutomatically()
+		//{
+		//	var container = this.GetEmptyContainer();
 
-			container.Register<IService, Service>().Register<IMyService, MyServiceNoDefaultCtor>();
+		//	container.Register<IService, Service>().Register<IMyService, MyServiceNoDefaultCtor>();
 
-			var resolver = container.GetResolver();
+		//	var resolver = container.GetResolver();
 
-			var service = resolver.Resolve<IMyService>();
+		//	var service = resolver.Resolve<IMyService>();
 
-			Assert.IsNotNull(service);
-			Assert.IsNotNull(service.Service);
-			Assert.IsTrue(service.Service is Service);
-		}
+		//	Assert.IsNotNull(service);
+		//	Assert.IsNotNull(service.Service);
+		//	Assert.IsTrue(service.Service is Service);
+		//}
 
 		[Test]
 		public void CanCreateWithConstructorParameter()

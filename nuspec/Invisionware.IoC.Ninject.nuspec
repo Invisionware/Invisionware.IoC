@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Invisionware.IoC.Ninject</id>
-		<version>1.0.0</version>
+		<version>1.0.1</version>
 		<title>Invisionware - IoC - Ninject</title>
 		<authors>Invisionware</authors>
 		<owners>Invisionware</owners>
@@ -16,10 +16,8 @@
 		<copyright>Copyright © 2018 Invisionware</copyright>
 		<tags>Invisionware IOC Ninject</tags>
 		<dependencies>
-			<group targetFramework="netstandard2.0">
-				<dependency id="Invisionware.IoC" version="1.0.0" />
-				<dependency id="Ninject" version="3.3.4" />
-			</group>
+			<dependency id="Invisionware.IoC" version="1.0.0" />
+			<dependency id="Ninject" version="3.3.4" />
 		</dependencies>
 	</metadata>
 	<files>
