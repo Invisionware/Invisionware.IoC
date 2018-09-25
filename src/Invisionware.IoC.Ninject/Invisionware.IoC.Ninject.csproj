@@ -12,10 +12,4 @@
     <ProjectReference Include="..\Invisionware.IoC.Core\Invisionware.IoC.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>C:\Users\raven\.nuget\packages\autofac\4.6.2\lib\net45\Autofac.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
