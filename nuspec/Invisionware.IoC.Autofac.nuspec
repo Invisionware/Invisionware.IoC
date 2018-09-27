@@ -6,9 +6,9 @@
 		<title>Invisionware - IoC - Autofac</title>
 		<authors>Invisionware</authors>
 		<owners>Invisionware</owners>
-		<projectUrl>https://github.com/Invisionware/IoC</projectUrl>
-		<licenseUrl>https://raw.githubusercontent.com/Invisionware/IoC/master/LICENSE</licenseUrl>
-		<iconUrl>https://github.com/Invisionware/IoC/raw/master/logo.png</iconUrl>
+		<projectUrl>https://github.com/Invisionware/Invisionware.IoC</projectUrl>
+		<licenseUrl>https://raw.githubusercontent.com/Invisionware/Invisionware.IoC/master/LICENSE</licenseUrl>
+		<iconUrl>https://github.com/Invisionware/Invisionware.IoC/raw/master/logo.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>This package implements the IOC provider contracts via AutoFac</description>
 		<summary>Invisionware is a open source project that aims to provide a powerfull and cross platform set of tools and extension libraries.</summary>
