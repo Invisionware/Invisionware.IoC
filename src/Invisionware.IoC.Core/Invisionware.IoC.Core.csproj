@@ -1,12 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Invisionware.IoC</RootNamespace>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-  </ItemGroup>
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>Invisionware.IoC</RootNamespace>
+		<PackageId>Invisionware.IoC</PackageId>
+		<Authors>Invisionware</Authors>
+		<PackageProjectUrl>https://github.com/Invisionware/Invisionware.IoC</PackageProjectUrl>
+		<PackageLicenseUrl>https://raw.githubusercontent.com/Invisionware/Invisionware.IoC/master/LICENSE</PackageLicenseUrl>
+		<PackageIconUrl>https://github.com/Invisionware/Invisionware.IoC/raw/master/logo.png</PackageIconUrl>
+		<Description>This package implements the core IOC provider contracts</Description>
+		<PackageReleaseNotes>Ported from XLabs Project and updated to .NET Standard Framewokr</PackageReleaseNotes>
+		<Copyright>Copyright © 2018 Invisionware</Copyright>
+		<PackageTags>Invisionware IOC</PackageTags>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+	</ItemGroup>
 </Project>
