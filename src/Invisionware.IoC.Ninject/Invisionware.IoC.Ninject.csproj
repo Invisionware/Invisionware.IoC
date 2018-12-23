@@ -4,7 +4,7 @@
 		<PackageId>Invisionware.IoC.Ninject</PackageId>
 		<Authors>Invisionware</Authors>
 		<PackageProjectUrl>https://github.com/Invisionware/Invisionware.IoC</PackageProjectUrl>
-		<PackageLicenseUrl>https://raw.githubusercontent.com/Invisionware/Invisionware.IoC/master/LICENSE</PackageLicenseUrl>
+		<license>Apache-2.0</license>
 		<PackageIconUrl>https://github.com/Invisionware/Invisionware.IoC/raw/master/logo.png</PackageIconUrl>
 		<Description>This package implements the IOC provider contracts via Ninject</Description>
 		<PackageReleaseNotes>Ported from XLabs Project and updated to .NET Standard Framewokr</PackageReleaseNotes>

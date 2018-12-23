@@ -9,9 +9,16 @@ Support for following libraries
 ```
 // Setup IoC
 var container = new Invisionware.Ioc.Autofac.AutofacContainer(new Autofac.ContainerBuilder().Build());
-Resolver.SetResolver(container.GetResolver());
 
+// Register this container within the IoC framework so we can access it later if we need to register additional objects
 container.Register<IDependencyContainer>(t => container);
 
+// Set the GLOBAL Resolver (makes it easier to use)
+Resolver.SetResolver(container.GetResolver());
+
+// Use the GLOBAL Resolver to access the current IoC instance
 var c = Resolver.Resolve<IDependencyContainer>();
+
+// Now we can register a new object
+c.Register(...)
 ```
