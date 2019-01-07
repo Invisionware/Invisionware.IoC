@@ -1,21 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
-		<RootNamespace>Invisionware.IoC.Autofac</RootNamespace>
+		<TargetFrameworks>netcoreapp2.0;netstandard2.0;net472</TargetFrameworks>
 		<PackageId>Invisionware.IoC.Autofac</PackageId>
 		<Authors>Invisionware</Authors>
 		<PackageProjectUrl>https://github.com/Invisionware/Invisionware.IoC</PackageProjectUrl>
 		<license>Apache-2.0</license>
 		<PackageIconUrl>https://github.com/Invisionware/Invisionware.IoC/raw/master/logo.png</PackageIconUrl>
 		<Description>This package implements the IOC provider contracts via AutoFac</Description>
-		<PackageReleaseNotes>Ported from XLabs Project and updated to .NET Standard Framewokr</PackageReleaseNotes>
+		<PackageReleaseNotes />
 		<Copyright>Copyright © 2018 Invisionware</Copyright>
 		<PackageTags>Invisionware IOC Autofac</PackageTags>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
+	
 	<ItemGroup>
 		<PackageReference Include="Autofac" Version="4.8.1" />
 	</ItemGroup>
+	
 	<ItemGroup>
 		<ProjectReference Include="..\Invisionware.IoC.Core\Invisionware.IoC.Core.csproj" />
 	</ItemGroup>

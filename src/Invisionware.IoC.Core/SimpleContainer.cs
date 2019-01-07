@@ -139,13 +139,13 @@ namespace Invisionware.IoC
 		/// <returns>An instance of <see cref="SimpleContainer" /></returns>
 		public IDependencyContainer Register(Type type, Type impl)
 		{
-            if (!_registeredServices.TryGetValue(type, out List<Func<IResolver, object>> list))
-            {
-                list = new List<Func<IResolver, object>>();
-                _registeredServices.Add(type, list);
-            }
+			if (!_registeredServices.TryGetValue(type, out List<Func<IResolver, object>> list))
+			{
+				list = new List<Func<IResolver, object>>();
+				_registeredServices.Add(type, list);
+			}
 
-            list.Add(t => Activator.CreateInstance(impl));
+			list.Add(t => Activator.CreateInstance(impl));
 
 			return this;
 		}
@@ -159,13 +159,13 @@ namespace Invisionware.IoC
 		public IDependencyContainer Register<T>(Func<IResolver, T> func) where T : class
 		{
 			var type = typeof(T);
-            if (!_registeredServices.TryGetValue(type, out List<Func<IResolver, object>> list))
-            {
-                list = new List<Func<IResolver, object>>();
-                _registeredServices.Add(type, list);
-            }
+			if (!_registeredServices.TryGetValue(type, out List<Func<IResolver, object>> list))
+			{
+				list = new List<Func<IResolver, object>>();
+				_registeredServices.Add(type, list);
+			}
 
-            list.Add(func);
+			list.Add(func);
 
 			return this;
 		}
@@ -177,22 +177,22 @@ namespace Invisionware.IoC
 		/// <returns>IEnumerable&lt;System.Object&gt;.</returns>
 		private IEnumerable<object> ResolveAll(Type type)
 		{
-            if (_services.TryGetValue(type, out List<object> list))
-            {
-                foreach (var service in list)
-                {
-                    yield return service;
-                }
-            }
+			if (_services.TryGetValue(type, out List<object> list))
+			{
+				foreach (var service in list)
+				{
+					yield return service;
+				}
+			}
 
-            if (_registeredServices.TryGetValue(type, out List<Func<IResolver, object>> getter))
-            {
-                foreach (var serviceFunc in getter)
-                {
-                    yield return serviceFunc(_resolver);
-                }
-            }
-        }
+			if (_registeredServices.TryGetValue(type, out List<Func<IResolver, object>> getter))
+			{
+				foreach (var serviceFunc in getter)
+				{
+					yield return serviceFunc(_resolver);
+				}
+			}
+		}
 
 		#endregion
 

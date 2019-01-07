@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".misc", ".misc", "{CDB4777B-5718-4969-9FB0-C146AD9B1EE0}"
 	ProjectSection(SolutionItems) = preProject
@@ -34,10 +34,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ninject", "Ninject", "{49EE
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Invisionware.IoC.UnitTests.Shared", "tests\Invisionware.IoC.UnitTests.Shared\Invisionware.IoC.UnitTests.Shared.shproj", "{DE0CB976-C1D4-4137-BA48-216BA962BFBA}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Invisionware.IoC.Autofac.UnitTests.Shared", "tests\Invisionware.IoC.Autofac.UnitTests.Shared\Invisionware.IoC.Autofac.UnitTests.Shared.shproj", "{336EFDBB-FD4F-4140-9BF7-356A2C15A19A}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Invisionware.IoC.Ninject.UnitTests.Shared", "tests\Invisionware.IoC.Ninject.UnitTests.Shared\Invisionware.IoC.Ninject.UnitTests.Shared.shproj", "{1210B22E-9D08-482D-AE40-3E1E2BE06D73}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autofac", "Autofac", "{9234AD1A-5B76-4C24-B1C0-720A9C65C22F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ninject", "Ninject", "{93026322-B2A0-4800-B727-A40FE8D3093F}"
@@ -50,8 +46,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.IoC.Ninject.Un
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		tests\Invisionware.IoC.Ninject.UnitTests.Shared\Invisionware.IoC.Ninject.UnitTests.Shared.projitems*{1210b22e-9d08-482d-ae40-3e1e2be06d73}*SharedItemsImports = 13
-		tests\Invisionware.IoC.Autofac.UnitTests.Shared\Invisionware.IoC.Autofac.UnitTests.Shared.projitems*{336efdbb-fd4f-4140-9bf7-356a2c15a19a}*SharedItemsImports = 13
 		tests\Invisionware.IoC.UnitTests.Shared\Invisionware.IoC.UnitTests.Shared.projitems*{de0cb976-c1d4-4137-ba48-216ba962bfba}*SharedItemsImports = 13
 		tests\Invisionware.IoC.Autofac.UnitTests.Shared\Invisionware.IoC.Autofac.UnitTests.Shared.projitems*{f74f7bf7-d624-4292-bd0c-9b8368106e17}*SharedItemsImports = 4
 		tests\Invisionware.IoC.Ninject.UnitTests.Shared\Invisionware.IoC.Ninject.UnitTests.Shared.projitems*{f74f7bf7-d624-4292-bd0c-9b8368106e17}*SharedItemsImports = 4
@@ -97,8 +91,6 @@ Global
 		{F1954763-7638-4E88-B3D9-EED029CB2254} = {76526DDC-3748-4943-8260-4040B720EA8D}
 		{49EE5905-9C48-49B2-8D55-E68341BB887D} = {76526DDC-3748-4943-8260-4040B720EA8D}
 		{DE0CB976-C1D4-4137-BA48-216BA962BFBA} = {2A587FDA-7727-4E4F-97AB-4260FFA343AA}
-		{336EFDBB-FD4F-4140-9BF7-356A2C15A19A} = {9234AD1A-5B76-4C24-B1C0-720A9C65C22F}
-		{1210B22E-9D08-482D-AE40-3E1E2BE06D73} = {93026322-B2A0-4800-B727-A40FE8D3093F}
 		{9234AD1A-5B76-4C24-B1C0-720A9C65C22F} = {2A587FDA-7727-4E4F-97AB-4260FFA343AA}
 		{93026322-B2A0-4800-B727-A40FE8D3093F} = {2A587FDA-7727-4E4F-97AB-4260FFA343AA}
 		{F74F7BF7-D624-4292-BD0C-9B8368106E17} = {2A587FDA-7727-4E4F-97AB-4260FFA343AA}

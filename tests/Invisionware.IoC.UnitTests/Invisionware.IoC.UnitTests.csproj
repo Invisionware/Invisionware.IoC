@@ -19,10 +19,6 @@
     <ProjectReference Include="..\..\src\Invisionware.IoC.Ninject\Invisionware.IoC.Ninject.csproj" />
   </ItemGroup>
 
-  <Import Project="..\Invisionware.IoC.Autofac.UnitTests.Shared\Invisionware.IoC.Autofac.UnitTests.Shared.projitems" Label="Shared" />
-
-  <Import Project="..\Invisionware.IoC.Ninject.UnitTests.Shared\Invisionware.IoC.Ninject.UnitTests.Shared.projitems" Label="Shared" />
-
   <Import Project="..\Invisionware.IoC.UnitTests.Shared\Invisionware.IoC.UnitTests.Shared.projitems" Label="Shared" />
 
 </Project>

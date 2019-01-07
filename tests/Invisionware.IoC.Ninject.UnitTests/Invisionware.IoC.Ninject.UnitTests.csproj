@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
@@ -17,8 +17,6 @@
     <ProjectReference Include="..\..\src\Invisionware.IoC.Core\Invisionware.IoC.Core.csproj" />
     <ProjectReference Include="..\..\src\Invisionware.IoC.Ninject\Invisionware.IoC.Ninject.csproj" />
   </ItemGroup>
-
-  <Import Project="..\Invisionware.IoC.Ninject.UnitTests.Shared\Invisionware.IoC.Ninject.UnitTests.Shared.projitems" Label="Shared" />
 
   <Import Project="..\Invisionware.IoC.UnitTests.Shared\Invisionware.IoC.UnitTests.Shared.projitems" Label="Shared" />
 
