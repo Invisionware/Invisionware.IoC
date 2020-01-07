@@ -32,24 +32,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autofac", "Autofac", "{F195
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ninject", "Ninject", "{49EE5905-9C48-49B2-8D55-E68341BB887D}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Invisionware.IoC.UnitTests.Shared", "tests\Invisionware.IoC.UnitTests.Shared\Invisionware.IoC.UnitTests.Shared.shproj", "{DE0CB976-C1D4-4137-BA48-216BA962BFBA}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Invisionware.IoC.Tests.Shared", "tests\Invisionware.IoC.Tests.Shared\Invisionware.IoC.Tests.Shared.shproj", "{DE0CB976-C1D4-4137-BA48-216BA962BFBA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autofac", "Autofac", "{9234AD1A-5B76-4C24-B1C0-720A9C65C22F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ninject", "Ninject", "{93026322-B2A0-4800-B727-A40FE8D3093F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.IoC.UnitTests", "tests\Invisionware.IoC.UnitTests\Invisionware.IoC.UnitTests.csproj", "{F74F7BF7-D624-4292-BD0C-9B8368106E17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.IoC.Tests", "tests\Invisionware.IoC.Tests\Invisionware.IoC.Tests.csproj", "{F74F7BF7-D624-4292-BD0C-9B8368106E17}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.IoC.Autofac.UnitTests", "tests\Invisionware.IoC.Autofac.UnitTests\Invisionware.IoC.Autofac.UnitTests.csproj", "{6A3C6373-3237-4C62-8C75-202F061DFC12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.IoC.Autofac.Tests", "tests\Invisionware.IoC.Autofac.Tests\Invisionware.IoC.Autofac.Tests.csproj", "{6A3C6373-3237-4C62-8C75-202F061DFC12}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.IoC.Ninject.UnitTests", "tests\Invisionware.IoC.Ninject.UnitTests\Invisionware.IoC.Ninject.UnitTests.csproj", "{B55EBB85-B505-45AB-B38A-75264FBB0A25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.IoC.Ninject.Tests", "tests\Invisionware.IoC.Ninject.Tests\Invisionware.IoC.Ninject.Tests.csproj", "{B55EBB85-B505-45AB-B38A-75264FBB0A25}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		tests\Invisionware.IoC.UnitTests.Shared\Invisionware.IoC.UnitTests.Shared.projitems*{de0cb976-c1d4-4137-ba48-216ba962bfba}*SharedItemsImports = 13
-		tests\Invisionware.IoC.Autofac.UnitTests.Shared\Invisionware.IoC.Autofac.UnitTests.Shared.projitems*{f74f7bf7-d624-4292-bd0c-9b8368106e17}*SharedItemsImports = 4
-		tests\Invisionware.IoC.Ninject.UnitTests.Shared\Invisionware.IoC.Ninject.UnitTests.Shared.projitems*{f74f7bf7-d624-4292-bd0c-9b8368106e17}*SharedItemsImports = 4
-		tests\Invisionware.IoC.UnitTests.Shared\Invisionware.IoC.UnitTests.Shared.projitems*{f74f7bf7-d624-4292-bd0c-9b8368106e17}*SharedItemsImports = 4
+		tests\Invisionware.IoC.Tests.Shared\Invisionware.IoC.Tests.Shared.projitems*{de0cb976-c1d4-4137-ba48-216ba962bfba}*SharedItemsImports = 13
+		tests\Invisionware.IoC.Autofac.Tests.Shared\Invisionware.IoC.Autofac.Tests.Shared.projitems*{f74f7bf7-d624-4292-bd0c-9b8368106e17}*SharedItemsImports = 4
+		tests\Invisionware.IoC.Ninject.Tests.Shared\Invisionware.IoC.Ninject.Tests.Shared.projitems*{f74f7bf7-d624-4292-bd0c-9b8368106e17}*SharedItemsImports = 4
+		tests\Invisionware.IoC.Tests.Shared\Invisionware.IoC.Tests.Shared.projitems*{f74f7bf7-d624-4292-bd0c-9b8368106e17}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
