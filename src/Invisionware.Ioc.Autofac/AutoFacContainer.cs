@@ -65,7 +65,9 @@ namespace Invisionware.IoC.Autofac
         {			
             var builder = new ContainerBuilder();
             builder.Register<T>(t => instance).As<T>();
+#pragma warning disable CS0618 // Type or member is obsolete
             builder.Update(this.container);
+#pragma warning restore CS0618 // Type or member is obsolete
             return this;
         }
 
@@ -81,7 +83,9 @@ namespace Invisionware.IoC.Autofac
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<TImpl>().As<T>();
+#pragma warning disable CS0618 // Type or member is obsolete
             builder.Update(this.container);
+#pragma warning restore CS0618 // Type or member is obsolete
             return this;
         }
 
@@ -95,7 +99,9 @@ namespace Invisionware.IoC.Autofac
         {
             var builder = new ContainerBuilder();
             builder.RegisterType(type).As<T>();
+#pragma warning disable CS0618 // Type or member is obsolete
             builder.Update(this.container);
+#pragma warning restore CS0618 // Type or member is obsolete
             return this;
         }
 
@@ -109,7 +115,9 @@ namespace Invisionware.IoC.Autofac
         {
             var builder = new ContainerBuilder();
             builder.RegisterType(impl).As(type);
+#pragma warning disable CS0618 // Type or member is obsolete
             builder.Update(this.container);
+#pragma warning restore CS0618 // Type or member is obsolete
             return this;
         }
 
@@ -139,7 +147,9 @@ namespace Invisionware.IoC.Autofac
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<TImpl>().As<T>().SingleInstance();
+#pragma warning disable CS0618 // Type or member is obsolete
             builder.Update(this.container);
+#pragma warning restore CS0618 // Type or member is obsolete
             return this;
         }
     }

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netcoreapp3.0;netstandard2.0;netcoreapp1.0;netstandard1.0;net472</TargetFrameworks>
+		<TargetFrameworks>netstandard1.0;net472</TargetFrameworks>
 		<PackageId>Invisionware.IoC</PackageId>
 		<Authors>Invisionware</Authors>
 		<PackageProjectUrl>https://github.com/Invisionware/Invisionware.IoC</PackageProjectUrl>
@@ -23,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
+	  <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
 	</ItemGroup>
 	
 </Project>
